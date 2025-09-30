@@ -203,7 +203,7 @@ class BmsSampler:
     def _filter_temperatures(self, temperatures):
         if not temperatures or self._lhq_temp is None:
             return temperatures
-        return [round(self._lhq_temp[i].add(temperatures[i]), 2) for i in range(len(temperatures))]
+        return temperatures
 
     async def _sample_inner(self):
         bms = self.bms
